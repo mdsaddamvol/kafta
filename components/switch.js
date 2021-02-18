@@ -72,13 +72,29 @@ export default function Switche() {
 
   return (
     <div className={IOSSwitch.continer}>
-      <Typography variant="p" component="span">
+      <div
+        style={{
+          textAlign: 'start',
+          fontSize: '12.5px',
+          fontFamily: 'Roboto',
+          fontWeight: 'regular',
+          display: 'inline',
+        }}
+      >
         Monthly
-      </Typography>
+      </div>
       <IOSSwitch checked={state.checkedB} onChange={handleChange} name="checkedB" />
-      <Typography variant="p" component="span">
-        <b>Yearly</b>
-      </Typography>
+      <div
+        style={{
+          textAlign: 'start',
+          fontSize: '12.5px',
+          fontFamily: 'Roboto',
+          fontWeight: 'bold',
+          display: 'inline',
+        }}
+      >
+        Yearly
+      </div>
     </div>
   );
 }

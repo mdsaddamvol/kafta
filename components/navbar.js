@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    width: '100%',
+    height: '20vh',
     flexGrow: 1,
     backgroundColor: '#f2f2f2',
   },
@@ -29,9 +31,16 @@ const NavBar = () => {
     <AppBar elevation={0} color="white" position="static">
       <Toolbar>
         <Typography variant="h5" className={classes.title}>
-          Kafka
+          Kafta
         </Typography>
-        <Button width="122px" className={classes.buttn} max-height="40px" variant="contained" color="primary">
+        <Button
+          width="122px"
+          className={classes.buttn}
+          max-height="40px"
+          elevation={0}
+          variant="contained"
+          color="primary"
+        >
           Contact Us
         </Button>
       </Toolbar>

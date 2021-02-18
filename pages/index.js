@@ -8,28 +8,32 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import FormComponent from './../components/FormComponent';
 import Cardbottom from '../components/cardbottom';
+import { WrapText } from '@material-ui/icons';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    height: '80vh',
-  },
+
   cards: {
-    flex: '0 1 584px',
+    width: '584px',
     display: 'flex',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    height: '80vh',
+    height: '761px',
+    [theme.breakpoints.down('sm')]: {
+      width: '350px',
+      height: '430px',
+    },
   },
   cardcontainer: {
-    maxWidth: 1295,
-    height: '80vh',
+    width: '100%',
+    height: '1080px',
     display: 'flex',
+    flexWrap: 'Wrap',
     justifyContent: 'space-evenly',
-    alignItems: 'flex-end',
-    padding: '10px',
+    alignItems: 'center',
+    padding: '15px',
   },
   footer: {
     fontSize: '12px',
@@ -42,16 +46,13 @@ export default function Home() {
     <div>
       <NavBar />
       <Grid className={classes.cardcontainer} container>
-        <Grid className={classes.cards} xs={12} sm={4} item>
+        <Grid textAlign="left" className={classes.cards} xs={12} sm={4} item>
           <Card />
           <Cardbottom />
           <BottomCard />
         </Grid>
-
         <Grid xs={12} sm={4} item>
-          <Paper className={classes.paper} variant="outlined" elevation={0}>
-            <FormComponent />
-          </Paper>
+          <FormComponent />
         </Grid>
         <p className={classes.footer}>
           By continuing,you agree to our Terms of Service and have read and acknowledge our Privcy policy.

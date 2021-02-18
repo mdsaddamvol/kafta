@@ -6,8 +6,14 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    flex: '0 1 584px',
-    padding: '20px',
+    width: '584px',
+    height: '104px',
+    padding: '30px 83px',
+    [theme.breakpoints.down('sm')]: {
+      width: '330px',
+      height: '104px',
+      padding: '20px 20px',
+    },
   },
 }));
 
@@ -16,10 +22,20 @@ export default function BottomCard() {
 
   return (
     <Paper className={classes.paper} variant="outlined" elevation={0}>
-      <Typography gutterBottom>You can use the extention 15 times per month</Typography>
-      <Typography variant="h5" component="h6">
+      <div
+        style={{
+          fontSize: '12.5px',
+          fontFamily: 'Roboto',
+          fontWeight: 'regular',
+          width: '287px',
+          height: '19px',
+        }}
+      >
+        You can use the extention 15 times per month
+      </div>
+      <div style={{ fontSize: '19px', fontFamily: 'Roboto', fontWeight: 'regular', width: '226px', height: '32px' }}>
         <b>FREE LIMITED VERSION</b>
-      </Typography>
+      </div>
     </Paper>
   );
 }
