@@ -1,65 +1,62 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import NavBar from './../components/navbar';
+import Card from './../components/card';
+import BottomCard from './../components/bottomCard';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import FormComponent from './../components/FormComponent';
+import Cardbottom from '../components/cardbottom';
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: '80vh',
+  },
+  cards: {
+    flex: '0 1 584px',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: '80vh',
+  },
+  cardcontainer: {
+    maxWidth: 1295,
+    height: '80vh',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-end',
+    padding: '10px',
+  },
+  footer: {
+    fontSize: '12px',
+  },
+}));
 export default function Home() {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div>
+      <NavBar />
+      <Grid className={classes.cardcontainer} container>
+        <Grid className={classes.cards} xs={12} sm={4} item>
+          <Card />
+          <Cardbottom />
+          <BottomCard />
+        </Grid>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+        <Grid xs={12} sm={4} item>
+          <Paper className={classes.paper} variant="outlined" elevation={0}>
+            <FormComponent />
+          </Paper>
+        </Grid>
+        <p className={classes.footer}>
+          By continuing,you agree to our Terms of Service and have read and acknowledge our Privcy policy.
         </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      </Grid>
     </div>
-  )
+  );
 }
