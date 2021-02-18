@@ -31,12 +31,15 @@ const useStyles = makeStyles(theme => ({
     height: '1080px',
     display: 'flex',
     flexWrap: 'Wrap',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     alignItems: 'center',
     padding: '15px',
   },
   footer: {
-    fontSize: '12px',
+    width: '100%',
+    fontSize: '16px',
+    display: 'flex',
+    justifyContent: 'center',
   },
 }));
 export default function Home() {
@@ -54,9 +57,9 @@ export default function Home() {
         <Grid xs={12} sm={4} item>
           <FormComponent />
         </Grid>
-        <p className={classes.footer}>
+        <div className={classes.footer}>
           By continuing,you agree to our Terms of Service and have read and acknowledge our Privcy policy.
-        </p>
+        </div>
       </Grid>
     </div>
   );
