@@ -58,7 +58,7 @@ export default function Home() {
           <FormComponent />
         </Grid>
         <div className={classes.footer}>
-          By continuing,you agree to our Terms of Service and have read and acknowledge our Privcy policy.
+          By continuing,you agree to our Terms of Service and have read and acknowledge our Privacy policy.
         </div>
       </Grid>
     </div>

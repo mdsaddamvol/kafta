@@ -111,6 +111,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    cursor: 'pointer',
   },
 }));
 
@@ -160,7 +161,7 @@ const FormComponent = () => {
           </div>
           <div className={classes.inputHalf}>
             <label className={classes.inputlabel}>CVC/CVV</label>
-            <input required className={classes.input} type="number" placeholder="123" />
+            <input required className={classes.input} type="tel" pattern="\d*" maxlength="3" placeholder="123" />
           </div>
         </div>
         <div className={classes.pay}>Pay $69</div>
