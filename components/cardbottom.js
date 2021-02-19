@@ -11,8 +11,8 @@ const useStyles = makeStyles(theme => ({
   },
 
   card: {
-    width: '584px',
-    height: '228px',
+    width: '40.44vw',
+    height: '21.11vh',
     display: 'flex',
     borderRadius: '4px',
     justifyContent: 'space-evenly',

@@ -75,7 +75,7 @@ export default function Switche() {
       <div
         style={{
           textAlign: 'start',
-          fontSize: '12.5px',
+          fontSize: '0.875em',
           fontFamily: 'Roboto',
           fontWeight: 'regular',
           display: 'inline',
@@ -87,7 +87,7 @@ export default function Switche() {
       <div
         style={{
           textAlign: 'start',
-          fontSize: '12.5px',
+          fontSize: '0.875em',
           fontFamily: 'Roboto',
           fontWeight: 'bold',
           display: 'inline',

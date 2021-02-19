@@ -5,9 +5,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 const BorderLinearProgress = withStyles(theme => ({
   root: {
-    height: '13px',
+    height: '1.20vh',
     borderRadius: '6px',
-    width: '153px',
+    width: '10.65vw',
   },
   colorPrimary: {
     backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],

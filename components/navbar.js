@@ -8,9 +8,12 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    height: '20vh',
+    height: '7.4vh',
     flexGrow: 1,
     backgroundColor: '#f2f2f2',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   menuButton: {
     marginRight: theme.spacing(4),
@@ -18,10 +21,22 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
     color: '#fe6416',
-    marginLeft: '20px',
+    marginLeft: '1.38vw',
   },
   buttn: {
-    marginRight: '20px',
+    marginRight: '1.38vw',
+    width: '8.47vw',
+    height: '3.7vh',
+    backgroundColor: '#2860E1',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: '0.875em',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    color: '#ffffff',
+    cursor: 'pointer',
+    borderRadius: '5px',
   },
 }));
 
@@ -33,16 +48,7 @@ const NavBar = () => {
         <Typography variant="h5" className={classes.title}>
           Kafta
         </Typography>
-        <Button
-          width="122px"
-          className={classes.buttn}
-          max-height="40px"
-          elevation={0}
-          variant="contained"
-          color="primary"
-        >
-          Contact Us
-        </Button>
+        <div className={classes.buttn}>Contact Us</div>
       </Toolbar>
     </AppBar>
   );

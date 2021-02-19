@@ -10,13 +10,13 @@ const useStyles = makeStyles(theme => ({
   },
 
   card: {
-    width: '584px',
-    height: '228px',
+    width: '40.55vw',
+    height: '21.11vh',
     display: 'flex',
     borderRadius: '4px',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    padding: '20px',
+    padding: '1.38vw',
     border: '1px solid #54545440',
     backgroundColor: 'white',
     '&:hover': {
@@ -28,28 +28,49 @@ const useStyles = makeStyles(theme => ({
     },
   },
   half: {
-    width: '159px',
-    height: '59px',
+    width: '14.4vw',
+    height: '5.46vh',
+    [theme.breakpoints.down('sm')]: {
+      width: '132px',
+      height: '46px',
+    },
   },
+
   half2: {
-    width: '153px',
-    height: '120px',
+    width: '10.625vw',
+    height: '11.11vh',
+    [theme.breakpoints.down('sm')]: {
+      width: '135px',
+      height: '97px',
+    },
+  },
+  bigText: {
+    fontSize: '1.5em',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    color: '#006CFF',
+    height: '2.96vh',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9em',
+    },
   },
 
   Chi: {
-    width: '61px',
-    height: '16px',
+    width: '4.24vw',
+    height: '1.48vh',
     marginLeft: '100px',
     alignSelf: 'flex-end',
     backgroundColor: '#FE641640',
     textAlign: 'center',
     color: '#FE6416',
     borderRadius: '5px',
-    fontSize: '12px',
+    fontSize: '0.875em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
       marginLeft: '80px',
+      width: '61px',
+      height: '19px',
     },
   },
 }));
@@ -62,24 +83,14 @@ export default function Card() {
         <div
           style={{
             textAlign: 'start',
-            fontSize: '12.5px',
+            fontSize: '0.875em',
             fontFamily: 'Roboto',
             fontWeight: 'regular',
           }}
         >
           All features Unlimited
         </div>
-        <div
-          style={{
-            fontSize: '19px',
-            fontFamily: 'Roboto',
-            fontWeight: 'bold',
-            color: '#006CFF',
-            height: '32px',
-          }}
-        >
-          UNLIMITED PLAN
-        </div>
+        <div className={classes.bigText}>UNLIMITED PLAN</div>
       </div>
       <div className={classes.half2}>
         <div className={classes.Chi} size="small">
@@ -96,7 +107,7 @@ export default function Card() {
         <div
           style={{
             textAlign: 'center',
-            fontSize: '24px',
+            fontSize: '1.5em',
             fontFamily: 'Roboto',
             fontWeight: 'bold',
           }}
@@ -106,7 +117,7 @@ export default function Card() {
         <Typography
           style={{
             textAlign: 'center',
-            fontSize: '14px',
+            fontSize: '0.875em',
             fontFamily: 'Roboto',
             fontWeight: 'regular',
           }}

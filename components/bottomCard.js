@@ -6,14 +6,28 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    width: '584px',
-    height: '104px',
-    padding: '30px 83px',
+    width: '40.44vw',
+    height: '9.62vh',
+    paddingLeft: '5.76vw',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    cursor: 'pointer',
+    '&:hover': {
+      border: '1px solid #006CFF',
+    },
     [theme.breakpoints.down('sm')]: {
       width: '330px',
       height: '104px',
       padding: '20px 20px',
     },
+  },
+  bigtext: {
+    fontSize: '1.5em',
+    fontFamily: 'Roboto',
+    fontWeight: 'black',
+    width: '20vw',
+    height: '2.96vh',
   },
 }));
 
@@ -24,16 +38,16 @@ export default function BottomCard() {
     <Paper className={classes.paper} variant="outlined" elevation={0}>
       <div
         style={{
-          fontSize: '12.5px',
+          fontSize: '0.875em',
           fontFamily: 'Roboto',
           fontWeight: 'regular',
-          width: '287px',
-          height: '19px',
+          width: '20vw',
+          height: '1.75vh',
         }}
       >
         You can use the extention 15 times per month
       </div>
-      <div style={{ fontSize: '19px', fontFamily: 'Roboto', fontWeight: 'regular', width: '226px', height: '32px' }}>
+      <div className={classes.bigtext}>
         <b>FREE LIMITED VERSION</b>
       </div>
     </Paper>

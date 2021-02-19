@@ -1,13 +1,14 @@
 import { Divider, Paper } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { useState } from 'react';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 0,
   },
   paper: {
-    width: '566px',
-    height: '797px',
+    width: '39.30vw',
+    height: '73.79vh',
     display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center',
@@ -27,14 +28,14 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     textAlign: 'start',
-    fontSize: '34px',
+    fontSize: '2.125em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     alignSelf: 'flex-start',
   },
   main: {
-    width: '470px',
-    height: '650px',
+    width: '32.64vw',
+    height: '60.18vh',
     display: 'flex',
     borderRadius: '4px',
     justifyContent: 'space-evenly',
@@ -42,68 +43,69 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   google: {
-    width: '270px',
-    height: '63px',
+    width: '15.41vw',
+    height: '5.83vh',
     border: '2px solid #DCDCDC',
     borderRadius: '5px',
     textAlign: 'center',
     alignSelf: 'flex-start',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
   },
   connectGoogle: {
     color: '#2860E1',
-    fontSize: '18px',
+    fontSize: '0.875em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
   },
-  g: { color: '#2860E1', fontSize: '38px', fontFamily: 'Roboto', fontWeight: 'regular' },
-  o: { color: '#EA4335', fontSize: '34px', fontFamily: 'Roboto', fontWeight: 'regular' },
-  o2: { color: '#FBBC05', fontSize: '34px', fontFamily: 'Roboto', fontWeight: 'regular' },
-  l: { color: '#34A853', fontSize: '34px', fontFamily: 'Roboto', fontWeight: 'regular' },
-  e: { color: '#EA4335', fontSize: '34px', fontFamily: 'Roboto', fontWeight: 'regular' },
+  googlesvg: {
+    width: '5.18vw',
+    height: '2.275vh',
+  },
   input: {
     width: '100%',
-    height: '40px',
+    height: '3.70vh',
     border: '2px solid #70707040',
-    padding: '5px',
-    paddingLeft: '15px',
+    padding: '0.347vw',
+    paddingLeft: '1.04vw',
     borderRadius: '5px',
   },
   inputlabel: {
-    fontSize: '14px',
+    fontSize: '0.875em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
   },
   inputContainer: {
     width: '100%',
-    height: '63px',
+    height: '5.83vh',
     display: 'flex',
     justifyContent: 'space-between',
   },
   inputContainerfull: {
     width: '100%',
-    height: '63px',
+    height: '5.83vh',
   },
   inputHalf: {
     width: '48%',
-    height: '63px',
+    height: '5.83vh',
   },
   email: {
     backgroundColor: '#F5F5FC',
     width: '100%',
-    height: '40px',
+    height: '3.70vh',
     border: '2px solid #70707040',
-    padding: '5px',
+    padding: '0.347vw',
     borderRadius: '5px',
-    paddingLeft: '15px',
+    paddingLeft: '1.04hw',
   },
   pay: {
     width: '100%',
-    height: '40px',
-    padding: '5px',
-    paddingLeft: '15px',
+    height: '3.70vh',
     borderRadius: '5px',
     backgroundColor: '#2860E1',
-    fontSize: '14px',
+    fontSize: '0.875em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
     color: 'white',
@@ -116,19 +118,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const FormComponent = () => {
+  const [email, setEmail] = useState('');
+  console.log(email);
   const classes = useStyles();
   return (
-    <div className={classes.paper} variant="outlined" elevation={0}>
+    <form className={classes.paper}>
       <div className={classes.main}>
         <div className={classes.title}>Subscribe and be unlimited</div>
         <div className={classes.google}>
           <span className={classes.connectGoogle}>Connect with</span>
-          <span className={classes.g}> G</span>
-          <span className={classes.o}>o</span>
-          <span className={classes.o2}>o</span>
-          <span className={classes.g}>g</span>
-          <span className={classes.l}>l</span>
-          <span className={classes.e}>e</span>
+          <img className={classes.googlesvg} src="/google.svg" />
         </div>
         <Divider />
         <div className={classes.inputContainerfull}>
@@ -137,7 +136,14 @@ const FormComponent = () => {
         </div>
         <div className={classes.inputContainerfull}>
           <label className={classes.inputlabel}>Email Address</label>
-          <input required type="email" className={classes.email} placeholder="jhondeo@gmail.com" />
+          <input
+            required
+            type="email"
+            className={classes.email}
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+            placeholder="jhondeo@gmail.com"
+          />
         </div>
         <div className={classes.inputContainer}>
           <div className={classes.inputHalf}>
@@ -157,16 +163,18 @@ const FormComponent = () => {
         <div className={classes.inputContainer}>
           <div className={classes.inputHalf}>
             <label className={classes.inputlabel}>Expire Date</label>
-            <input required className={classes.input} type="text" placeholder="MM/YY" />
+            <input required className={classes.input} type="number" placeholder="MM/YY" />
           </div>
           <div className={classes.inputHalf}>
             <label className={classes.inputlabel}>CVC/CVV</label>
             <input required className={classes.input} type="tel" pattern="\d*" maxlength="3" placeholder="123" />
           </div>
         </div>
-        <div className={classes.pay}>Pay $69</div>
+        <button type="submit" className={classes.pay}>
+          Pay $69
+        </button>
       </div>
-    </div>
+    </form>
   );
 };
 

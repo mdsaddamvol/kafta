@@ -15,12 +15,12 @@ const useStyles = makeStyles(theme => ({
   },
 
   cards: {
-    width: '584px',
+    width: '40.44vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    height: '761px',
+    height: '70.46vh',
     [theme.breakpoints.down('sm')]: {
       width: '350px',
       height: '430px',
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   cardcontainer: {
     width: '100%',
-    height: '1080px',
+    height: '89.4vh',
     display: 'flex',
     flexWrap: 'Wrap',
     justifyContent: 'space-around',
@@ -40,6 +40,10 @@ const useStyles = makeStyles(theme => ({
     fontSize: '16px',
     display: 'flex',
     justifyContent: 'center',
+    fontSize: '0.875em',
+    fontFamily: 'Roboto',
+    fontWeight: 'regular',
+    alignSelf: 'flex-end',
   },
 }));
 export default function Home() {
@@ -58,7 +62,8 @@ export default function Home() {
           <FormComponent />
         </Grid>
         <div className={classes.footer}>
-          By continuing,you agree to our Terms of Service and have read and acknowledge our Privacy policy.
+          By continuing,you agree to our Terms of Service and have read and acknowledge our{' '}
+          <a href="#">Privacy policy</a>.
         </div>
       </Grid>
     </div>
