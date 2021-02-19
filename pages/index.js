@@ -34,6 +34,9 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: '15px',
+    [theme.breakpoints.down('sm')]: {
+      hight: '1651px',
+    },
   },
   footer: {
     width: '100%',
@@ -62,8 +65,8 @@ export default function Home() {
           <FormComponent />
         </Grid>
         <div className={classes.footer}>
-          By continuing,you agree to our Terms of Service and have read and acknowledge our{' '}
-          <a href="#">Privacy policy</a>.
+          By continuing,you agree to our Terms of Service and have read and acknowledge our
+          <a href="#"> Privacy policy</a>.
         </div>
       </Grid>
     </div>

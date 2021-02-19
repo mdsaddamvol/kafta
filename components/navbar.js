@@ -37,6 +37,10 @@ const useStyles = makeStyles(theme => ({
     color: '#ffffff',
     cursor: 'pointer',
     borderRadius: '5px',
+    [theme.breakpoints.down('sm')]: {
+      width: '122px',
+      height: '40px',
+    },
   },
 }));
 

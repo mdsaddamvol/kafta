@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down('sm')]: {
       width: '330px',
-      hight: '960px',
+      height: '981px',
       padding: '30px',
       flexDirection: 'row',
       justifyContent: 'center',
@@ -41,6 +41,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     flexDirection: 'column',
+    [theme.breakpoints.down('sm')]: {
+      width: '80vw',
+      height: '981px',
+    },
   },
   google: {
     width: '15.41vw',
@@ -53,6 +57,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      width: '222px',
+      height: '40px',
+    },
   },
   connectGoogle: {
     color: '#2860E1',
@@ -63,33 +71,54 @@ const useStyles = makeStyles(theme => ({
   googlesvg: {
     width: '5.18vw',
     height: '2.275vh',
+    [theme.breakpoints.down('sm')]: {
+      width: '74.63px',
+      height: '24.57px',
+    },
   },
   input: {
     width: '100%',
     height: '3.70vh',
     border: '2px solid #70707040',
     padding: '0.347vw',
-    paddingLeft: '1.04vw',
+    paddingLeft: '15px',
     borderRadius: '5px',
+    [theme.breakpoints.down('sm')]: {
+      height: '40px',
+    },
   },
   inputlabel: {
     fontSize: '0.875em',
     fontFamily: 'Roboto',
     fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      height: '25px',
+    },
   },
   inputContainer: {
     width: '100%',
     height: '5.83vh',
     display: 'flex',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      height: '160px',
+    },
   },
   inputContainerfull: {
     width: '100%',
     height: '5.83vh',
+    [theme.breakpoints.down('sm')]: {
+      height: '63px',
+    },
   },
   inputHalf: {
     width: '48%',
     height: '5.83vh',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '63px',
+    },
   },
   email: {
     backgroundColor: '#F5F5FC',
@@ -98,7 +127,10 @@ const useStyles = makeStyles(theme => ({
     border: '2px solid #70707040',
     padding: '0.347vw',
     borderRadius: '5px',
-    paddingLeft: '1.04hw',
+    paddingLeft: '15px',
+    [theme.breakpoints.down('sm')]: {
+      height: '40px',
+    },
   },
   pay: {
     width: '100%',
@@ -114,6 +146,20 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      height: '40px',
+    },
+  },
+
+  smdivider: {
+    width: 0,
+    height: 0,
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '1px',
+      marginTop: '28px',
+      borderBottom: '1px solid #70707040',
+    },
   },
 }));
 
@@ -129,7 +175,9 @@ const FormComponent = () => {
           <span className={classes.connectGoogle}>Connect with</span>
           <img className={classes.googlesvg} src="/google.svg" />
         </div>
+        <div className={classes.smdivider}></div>
         <Divider />
+
         <div className={classes.inputContainerfull}>
           <label className={classes.inputlabel}>Full Name</label>
           <input required className={classes.input} type="text" placeholder="text" />
@@ -155,6 +203,7 @@ const FormComponent = () => {
             <input required type="password" className={classes.input} placeholder="********" />
           </div>
         </div>
+        <div className={classes.smdivider}></div>
         <Divider />
         <div className={classes.inputContainerfull}>
           <label className={classes.inputlabel}>Cradit Card Number</label>

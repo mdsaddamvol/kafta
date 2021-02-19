@@ -8,6 +8,10 @@ const BorderLinearProgress = withStyles(theme => ({
     height: '1.20vh',
     borderRadius: '6px',
     width: '10.65vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '84px',
+      height: '13px',
+    },
   },
   colorPrimary: {
     backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
@@ -20,7 +24,7 @@ const BorderLinearProgress = withStyles(theme => ({
 
 const useStyles = makeStyles({
   root: {
-    flexGrow: 1,
+    flexGrow: 0,
   },
 });
 
