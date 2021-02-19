@@ -207,7 +207,7 @@ const FormComponent = () => {
         <Divider />
         <div className={classes.inputContainerfull}>
           <label className={classes.inputlabel}>Cradit Card Number</label>
-          <input required type="number" className={classes.input} placeholder=" 4242 4242 4242" />
+          <input required className={classes.input} type="number" max="12" placeholder=" 4242 4242 4242" />
         </div>
         <div className={classes.inputContainer}>
           <div className={classes.inputHalf}>
