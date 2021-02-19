@@ -47,6 +47,10 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Roboto',
     fontWeight: 'regular',
     alignSelf: 'flex-end',
+    flexWrap: 'wrap',
+  },
+  footera: {
+    marginLeft: '5px',
   },
 }));
 export default function Home() {
@@ -65,8 +69,12 @@ export default function Home() {
           <FormComponent />
         </Grid>
         <div className={classes.footer}>
-          By continuing,you agree to our Terms of Service and have read and acknowledge our
-          <a href="#"> Privacy policy</a>.
+          By continuing,you agree to our Terms of Service and have read and acknowledge our <span> </span>
+          <a className={classes.footera} href="#">
+            {' '}
+            Privacy policy
+          </a>
+          .
         </div>
       </Grid>
     </div>
